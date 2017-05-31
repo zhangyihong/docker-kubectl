@@ -22,6 +22,3 @@ RUN apk add --update ca-certificates \
  && chmod +x /usr/local/bin/kubectl \
  && apk del --purge deps \
  && rm /var/cache/apk/*
- 
-COPY docker-entrypoint.sh /usr/local/bin/
-
