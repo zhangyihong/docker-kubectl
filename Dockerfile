@@ -1,10 +1,13 @@
 FROM docker:latest
 
+COPY ./remove-po.sh /remove-po.sh
+RUN chmod +x /remove-po.sh
+
 RUN apk add --no-cache bash \
                        py-pip
 RUN pip install docker-compose
 
-ENV CONSUL_TEMPLATE_VERSION 0.18.3
+ENV CONSUL_TEMPLATE_VERSION 0.18.5
 
 ADD https://releases.hashicorp.com/consul-template/${CONSUL_TEMPLATE_VERSION}/consul-template_${CONSUL_TEMPLATE_VERSION}_linux_amd64.zip /
 
